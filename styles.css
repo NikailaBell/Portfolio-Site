@@ -269,3 +269,57 @@ footer {
     color: var(--text-light);
     margin-top: 4rem;
 }
+
+/* --- Icon Mosaic Layout --- */
+.icon-mosaic {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.icon-card {
+    background-color: var(--sage-light);
+    aspect-ratio: 1; /* Keeps them perfectly square */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+    box-shadow: 0 10px 25px rgba(156, 175, 136, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.icon-card:hover {
+    transform: translateY(-5px);
+    background-color: var(--sage-main);
+}
+
+/* Creating unique, playful shapes for each icon */
+.shape-1 {
+    border-radius: 30px; 
+}
+
+.shape-2 {
+    border-radius: 50%;
+    background-color: var(--sage-main);
+}
+
+.shape-3 {
+    border-radius: 50%;
+    background-color: var(--sage-main);
+}
+
+.shape-4 {
+    border-radius: 30px; 
+}
+
+/* Narrow & Centered Text Style */
+.text-narrow {
+    max-width: 600px;
+    margin: 0 auto; /* The 'auto' pushes equally on the left and right to center it */
+    text-align: center;
+    line-height: 1.8; /* Adds a little extra breathing room between lines */
+}

@@ -21,35 +21,61 @@
     <div class="container">
         <h2 class="section-title">Let's Connect</h2>
         
-        <p style="text-align: center; margin-bottom: 2rem;">I'm always open to discussing UX/UI design, data science projects, or even just chatting about the best local ski runs! Feel free to reach out.</p>
+        <p class="text-narrow" style="text-align: center; margin-bottom: 3rem;"> 
+            If your team is looking for someone who bridges the gap between analytical problem-solving and human-centered design, I would love to connect.
+        </p>
 
-        <form action="#" method="POST">
-            <div class="input-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
-            </div>
-            
-            <div class="input-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-            </div>
-            
-            <div class="input-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Hello! I'd love to collaborate on..." required></textarea>
-            </div>
-            
-            <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer; font-size: 1rem;">Send Message</button>
-            
-            <div style="text-align: center; margin-top: 2rem;">
-                <p>Or find me on:</p>
-                <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 1rem;">
-                    <a href="#" class="tag" style="text-decoration: none;">LinkedIn</a>
-                    <a href="#" class="tag" style="text-decoration: none;">GitHub</a>
-                    <a href="#" class="tag" style="text-decoration: none;">Figma</a>
+        <!-- New Layout: Side-by-Side Flexbox -->
+        <div style="display: flex; flex-wrap: wrap; gap: 4rem; justify-content: space-between; max-width: 900px; margin: 0 auto;">
+                    { 
+                        <!-- Left Side: The Contact Form (Web3Forms Version) -->
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="margin-bottom: 1.5rem;">Send a Message</h3>
+                
+                <!-- The Web3Forms Action URL -->
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    
+                    <!-- REQUIRED: Your Web3Forms Access Key goes here -->
+                    <input type="hidden" name="access_key" value="04eb7d70-6f02-4530-b747-4863e47e6051">
+                    
+                    <div class="input-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                    
+                    <div class="input-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Hello! I'd love to collaborate on..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer; font-size: 1rem;">Send Message</button>
+                </form>
+            </div>}
+
+            <!-- Right Side: Direct Email & Links -->
+            <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: flex-start;">
+                <h3 style="margin-bottom: 1.5rem;">Direct Contact</h3>
+                
+                <p style="margin-bottom: 1rem;">Prefer to send an email directly? You can reach me at:</p>
+                <!-- Replace with your actual email address -->
+                <a href="mailto:your.real.email@gmail.com" style="display: inline-block; font-size: 1.1rem; color: var(--sage-main); font-weight: bold; margin-bottom: 2.5rem; text-decoration: none;">
+                    nikailabell@gmail.com
+                </a>
+
+                <h3 style="margin-bottom: 1.5rem;">Find Me Online</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                    <a href="https://www.linkedin.com/in/nikaila-bell-3a691a329/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3B8mw5KneORY6NmUim5UHA1g%3D%3D" class="tag" target="_blank" style="text-decoration: none;">LinkedIn</a>
+                    <a href="https://github.com/NikailaBell" class="tag" target="_blank" style="text-decoration: none;">GitHub</a>
+                    <a href="https://www.figma.com/files/team/1296929144654721937/user/1422610797900900249?fuid=1422610797900900249" class="tag" target="_blank" style="text-decoration: none;">Figma</a>
                 </div>
             </div>
-        </form>
+
+        </div>
     </div>
 
     <footer>
