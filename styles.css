@@ -50,8 +50,10 @@ nav {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 15px rgba(156, 175, 136, 0.1);
-    border-radius: 0 0 30px 30px; /* Curvy bottom edges */
+    border-radius: 0 0 30px 30px; 
     margin-bottom: 2rem;
+    position: relative; /* REQUIRED: Keeps the mobile dropdown anchored properly */
+    z-index: 200; /* Keeps nav above all other page content */
 }
 
 .logo {
@@ -150,7 +152,7 @@ nav {
     padding: 0.8rem 2rem;
     background-color: var(--sage-main);
     color: white;
-    border-radius: 30px; /* Curvy edges */
+    border-radius: 30px; 
     font-weight: 600;
     box-shadow: 0 4px 10px rgba(156, 175, 136, 0.4);
     transition: transform 0.3s ease, background-color 0.3s ease;
@@ -173,7 +175,6 @@ nav {
     transform: translateX(-50%);
 }
 
-/* Ribbon accent for titles */
 .section-title::after {
     content: '';
     position: absolute;
@@ -196,10 +197,10 @@ nav {
 .card {
     background: white;
     padding: 2rem;
-    border-radius: 30px; /* Curvy */
+    border-radius: 30px; 
     box-shadow: 0 10px 25px rgba(156, 175, 136, 0.1);
     transition: transform 0.3s ease;
-    border-top: 8px solid var(--sage-light); /* Ribbon-like top accent */
+    border-top: 8px solid var(--sage-light); 
 }
 
 .card:hover {
@@ -282,7 +283,7 @@ footer {
 
 .icon-card {
     background-color: var(--sage-light);
-    aspect-ratio: 1; /* Keeps them perfectly square */
+    aspect-ratio: 1; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -297,83 +298,124 @@ footer {
     background-color: var(--sage-main);
 }
 
-/* Creating unique, playful shapes for each icon */
-.shape-1 {
-    border-radius: 30px; 
-}
-
-.shape-2 {
-    border-radius: 50%;
-    background-color: var(--sage-main);
-}
-
-.shape-3 {
-    border-radius: 50%;
-    background-color: var(--sage-main);
-}
-
-.shape-4 {
-    border-radius: 30px; 
-}
+.shape-1 { border-radius: 30px; }
+.shape-2 { border-radius: 50%; background-color: var(--sage-main); }
+.shape-3 { border-radius: 50%; background-color: var(--sage-main); }
+.shape-4 { border-radius: 30px; }
 
 /* Narrow & Centered Text Style */
 .text-narrow {
     max-width: 600px;
-    margin: 0 auto; /* The 'auto' pushes equally on the left and right to center it */
+    margin: 0 auto; 
     text-align: center;
-    line-height: 1.8; /* Adds a little extra breathing room between lines */
+    line-height: 1.8; 
 }
 
-/* --- Hamburger Icon Styles --- */
+
+/* ========================================= */
+/* 📱 MOBILE RESPONSIVE RULES (Max 768px)    */
+/* ========================================= */
+
 .hamburger {
-    display: none;
+    display: none; /* Hidden on desktop */
     cursor: pointer;
     flex-direction: column;
     gap: 5px;
+    z-index: 300; /* Keeps burger above the menu */
 }
 
 .hamburger .bar {
     width: 25px;
     height: 3px;
-    background-color: var(--text-dark); /* Matches your sage theme */
+    background-color: var(--text-dark); 
     border-radius: 3px;
     transition: all 0.3s ease;
 }
 
-/* --- Mobile Responsive Rules --- */
 @media (max-width: 768px) {
+    
+    /* --- 1. Clean Dropdown Navigation --- */
     .hamburger {
-        display: flex; /* Shows the burger on mobile */
+        display: flex; 
     }
 
     .nav-links {
         position: absolute;
-        top: 80px; 
-        right: -100%; /* Hides the menu off-screen */
-        flex-direction: column;
-        background-color: white;
+        top: 100%; /* Drops exactly beneath the nav bar */
+        left: 0;
         width: 100%;
-        text-align: center;
-        padding: 2rem 0;
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 0 0 30px 30px;
         box-shadow: 0 10px 15px rgba(156, 175, 136, 0.1);
-        border-radius: 0 0 30px 30px; /* Matches your curvy nav bar */
-        transition: 0.3s ease;
-        z-index: 100; /* Keeps it on top of other elements */
-    }
-
-    /* This class slides the menu in */
-    .nav-links.active {
-        right: 0;
-    }
-
-    /* Animates the burger into an 'X' */
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger.active .bar:nth-child(2) {
+        
+        /* Hidden state for smooth animation */
+        padding: 0;
         opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
     }
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+
+    .nav-links.active {
+        /* Visible state */
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        padding: 2rem 0;
+        gap: 1.5rem; /* Larger tap targets for mobile */
+    }
+
+    /* Burger Animation */
+    .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+
+    /* --- 2. Hero Section (Image on Top) --- */
+    .hero {
+        flex-direction: column-reverse; /* Flips HTML order to put image first */
+        text-align: center;
+        gap: 2rem;
+        min-height: auto;
+        padding-top: 1rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem; /* Scales text down */
+    }
+
+    .hero-text h2 {
+        font-size: 1.2rem !important;
+    }
+
+    /* Centers the side-by-side buttons */
+    .hero-text > div {
+        justify-content: center !important; 
+    }
+
+    .image-placeholder {
+        width: 250px; /* Scales down headshot */
+        height: 250px;
+        margin: 0 auto; /* Centers perfectly */
+    }
+
+
+    /* --- 3. General Mobile Cleanups --- */
+    .container {
+        padding: 1.5rem 5%;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr; /* Forces exactly one column on phones */
+    }
+    
+    form {
+        padding: 2rem 1.5rem; /* Prevents form from bleeding off the screen */
     }
 }
