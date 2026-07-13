@@ -323,3 +323,57 @@ footer {
     text-align: center;
     line-height: 1.8; /* Adds a little extra breathing room between lines */
 }
+
+/* --- Hamburger Icon Styles --- */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-dark); /* Matches your sage theme */
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* --- Mobile Responsive Rules --- */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Shows the burger on mobile */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 80px; 
+        right: -100%; /* Hides the menu off-screen */
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        padding: 2rem 0;
+        box-shadow: 0 10px 15px rgba(156, 175, 136, 0.1);
+        border-radius: 0 0 30px 30px; /* Matches your curvy nav bar */
+        transition: 0.3s ease;
+        z-index: 100; /* Keeps it on top of other elements */
+    }
+
+    /* This class slides the menu in */
+    .nav-links.active {
+        right: 0;
+    }
+
+    /* Animates the burger into an 'X' */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
