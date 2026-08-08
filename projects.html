@@ -29,8 +29,74 @@
     <div class="container">
         <h2 class="section-title">My Work</h2>
     
-        
-        <div class="grid">
+        <!-- 📁 THE TAB BUTTONS -->
+        <div class="tab-container">
+            <!-- Notice the 'active' class on the first button so it opens by default -->
+            <button class="tab-btn active" onclick="openTab(event, 'design-tab')">UX & Learning Design</button>
+            <button class="tab-btn" onclick="openTab(event, 'analytics-tab')">Data Science & Systems</button>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 1: DESIGN & ITLS                      -->
+        <!-- ========================================= -->
+        <div id="design-tab" class="grid tab-content active-tab">
+
+             <!-- NEW: ITLS UX Writing Project -->
+            <!-- Note: I added position: relative to the card so the star knows where to attach itself -->
+            <div class="card" style="position: relative;">
+                
+                <!-- The Floating Star Badge -->
+                <div style="position: absolute; top: -15px; right: -15px; background-color: var(--sage-main); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 4px 10px rgba(156, 175, 136, 0.5);" title="Featured Project">
+                    ★
+                </div>
+
+                <h3>UX Writing & Microcopy</h3>
+                <div class="tag-container">
+                    <span class="tag">ITLS</span>
+                    <span class="tag">UX Writing</span>
+                    <span class="tag">Content Strategy</span>
+                </div>
+                <p style="margin-bottom: 1.5rem;">A deep dive into how clear, concise microcopy impacts user behavior and accessibility in digital learning platforms. Crafted strategic text to guide users seamlessly through complex tasks.</p>
+                
+                <!-- Points to your new dedicated case study page -->
+                <a href="ux-writing.html" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">View Case Study</a>
+            </div>
+
+            <!-- NEW: ITLS Andragogy Project -->
+            <div class="card">
+                <h3>Andragogy & Adult Learning</h3>
+                <div class="tag-container">
+                    <span class="tag">ITLS</span>
+                    <span class="tag">Instructional Design</span>
+                    <span class="tag">Research</span>
+                </div>
+                <p style="margin-bottom: 1.5rem;">Explored the principles of adult learning (Andragogy) to design effective, learner-centered educational experiences. Focused on applying theory to practical digital environments.</p>
+                <a href="AL_learningAnalysis_and_BluePrint.pdf" target="_blank" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">View Project</a>
+            </div>
+
+           <!-- NEW: ITLS AI Project -->
+            <div class="card">
+                <h3>AI in Educational Technology</h3>
+                <div class="tag-container">
+                    <span class="tag">ITLS</span>
+                    <span class="tag">AI</span>
+                    <span class="tag">Prompt Engineering</span>
+                </div>
+                <p style="margin-bottom: 1.5rem;">Investigated how AI can serve as a powerful design co-pilot[cite: 3]. Evaluated frontier models (Gemini, Claude, Grok)[cite: 1] and applied advanced prompt engineering to build UX rubrics, demonstrating how AI enhances—rather than replaces—human-centered design[cite: 2, 3].</p>
+                
+                <!-- Side-by-side buttons for the 3 AI Documents -->
+                <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                    <!-- Primary Button -->
+                    <a href="module3FrontierModels.pdf" target="_blank" class="btn" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Frontier Models</a>
+                    
+                    <!-- Secondary Outline Buttons -->
+                    <a href="AIPrompting_Bell.pdf" target="_blank" class="btn" style="padding: 0.5rem 1rem; font-size: 0.85rem; background-color: transparent; border: 2px solid var(--sage-main); color: var(--sage-main);">AI Prompting</a>
+                    
+                    <a href="AI_Learning_Experience_Reflection.pdf" target="_blank" class="btn" style="padding: 0.5rem 1rem; font-size: 0.85rem; background-color: transparent; border: 2px solid var(--sage-main); color: var(--sage-main);">Learning Reflection</a>
+                </div>
+            </div>
+
+           
 
              <div class="card">
                 <h3>Movie Theatre Website</h3>
@@ -39,13 +105,12 @@
                     <span class="tag">HTML</span>
                     <span class="tag">Design</span>
                 </div>
-                <p style="margin-bottom: 1.5rem;">A renewed and reimagined website for the Kaysville Theatre. I have always had a love for the small, vintage theatre and the memories I had there growing up. I took the opportunity to elevate their online platform to match the magic of their theatre. I plan to pitch this prototype to the theater's management soon.</p>
+                <p style="margin-bottom: 1.5rem;">A renewed and reimagined website for the Kaysville Theatre. I have always had a love for the small, vintage theatre and the memories I had there growing up. I took the opportunity to elevate their online platform to match the magic of their theatre.</p>
                 <a href="https://kaysvilletheatre.netlify.app/" target="_blank" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">View Website</a>
             </div>
 
-
             <div class="card">
-                <h3>Music Venue Web Design</h3>
+                <h3>Vertex Venue Web Design</h3>
                 <div class="tag-container">
                     <span class="tag">UX/UI Design</span>
                     <span class="tag">Prototyping</span>
@@ -59,15 +124,23 @@
             </div>
 
             <div class="card">
-                <h3>Music Venue Software Delivery Plan</h3>
+                <h3>Coupon App Prototype</h3>
                 <div class="tag-container">
-                    <span class="tag">DevOps</span>
-                    <span class="tag">Pipeline Design</span>
-                </div>
-                <p style="margin-bottom: 1.5rem;">A complete DevOps delivery system project focusing on intricate pipeline design and environment separation for a modern venue platform. Building off the Vertex Venue website creation, a DevOps software delivery plan sets the way in which new features and updates are safely, quickly, and automatically delivered to the live site without disrupting the user experience. </p>
-                <a href="VertexVenueProject.pdf" target="_blank" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">View Case Study</a>
-            </div>
+                    <span class="tag">UX/UI Design</span>
+                    <span class="tag">Figma</span>
+                    <span class="tag">Team Collaboration</span>
+                  </div>
+                  <p style="margin-bottom: 1.5rem;">Collaborated within a team environment to design a high-fidelity prototype for a mobile coupon application. Focused on intuitive navigation and clean visual design to streamline the user experience for discovering and saving local deals.</p>
+                  <a href="https://www.figma.com/design/PJMsGjzNuGdAlgtyBlfGNb/High-Fidelity-Prototype--Copy-?node-id=0-1&p=f&t=IHseHVNNt6QBkHF6-0" target="_blank" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">View Prototype</a>
+               </div>
+        </div>
 
+
+        <!-- ========================================= -->
+        <!-- TAB 2: ANALYTICS & MATH                   -->
+        <!-- ========================================= -->
+        <div id="analytics-tab" class="grid tab-content">
+            
             <div class="card">
                 <h3>Maternal Health Predictive Model</h3>
                 <div class="tag-container">
@@ -80,27 +153,6 @@
             </div>
 
             <div class="card">
-                <h3>Coupon App Prototype</h3>
-                <div class="tag-container">
-                    <span class="tag">UX/UI Design</span>
-                    <span class="tag">Figma</span>
-                    <span class="tag">Team Collaboration</span>
-                  </div>
-                  <p style="margin-bottom: 1.5rem;">Collaborated within a team environment to design a high-fidelity prototype for a mobile coupon application. Focused on intuitive navigation and clean visual design to streamline the user experience for discovering and saving local deals.</p>
-                  <a href="https://www.figma.com/design/PJMsGjzNuGdAlgtyBlfGNb/High-Fidelity-Prototype--Copy-?node-id=0-1&p=f&t=IHseHVNNt6QBkHF6-0" target="_blank" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">View Prototype</a>
-               </div>
-
-            <!-- <div class="card">
-                <h3>Gender Pay Gap Statistical Analysis</h3>
-                <div class="tag-container">
-                    <span class="tag">R</span>
-                    <span class="tag">Statistics</span>
-                </div>
-                <p style="margin-bottom: 1.5rem;">An in-depth statistical analysis utilizing the Sleuth3 package in R to examine differences in male and female incomes while accounting for education and IQ.</p>
-                <a href="#" target="_blank" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Read Report</a>
-            </div> -->
-
-            <div class="card">
                 <h3>Climate Change Case Study</h3>
                 <div class="tag-container">
                     <span class="tag">Research & Analysis</span>
@@ -110,16 +162,27 @@
                    <p style="margin-bottom: 1.5rem;">Directed a comprehensive climate change case study during undergraduate studies. Organically stepped into the role of team lead to streamline the workflow, fostering a collaborative environment that motivated the group to deliver impactful, cohesive research.</p>
                    <a href="https://github.com/NikailaBell/Cpp-project/blob/main/ClimateChange-GroupCaseStudy.ipynb" class="btn" target="_blank" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">View Case Study</a>
               </div>
-            
+
+              <div class="card">
+                <h3>Music Venue Software Delivery Plan</h3>
+                <div class="tag-container">
+                    <span class="tag">DevOps</span>
+                    <span class="tag">Pipeline Design</span>
+                </div>
+                <p style="margin-bottom: 1.5rem;">A complete DevOps delivery system project focusing on intricate pipeline design and environment separation for a modern venue platform. Building off the Vertex Venue website creation, a DevOps software delivery plan sets the way in which new features and updates are safely, quickly, and automatically delivered to the live site without disrupting the user experience. </p>
+                <a href="VertexVenueProject.pdf" target="_blank" class="btn" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">View Case Study</a>
+            </div>
 
         </div>
+
     </div>
 
     <footer>
         <p>&copy; 2026 Niki. Designed with care.</p>
     </footer>
     
-<script>
+    <script>
+        // 1. Existing Mobile Menu Script
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('nav-links');
 
@@ -127,8 +190,26 @@
             navLinks.classList.toggle('active');
             hamburger.classList.toggle('active');
         });
-    </script>
 
+        // 2. NEW: Tab Switching Script
+        function openTab(evt, tabName) {
+            // Hide all elements with class="tab-content"
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(tab => {
+                tab.classList.remove('active-tab');
+            });
+
+            // Get all buttons and remove the "active" class
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            tabBtns.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show the clicked tab and highlight the clicked button
+            document.getElementById(tabName).classList.add('active-tab');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>

@@ -419,3 +419,53 @@ footer {
         padding: 2rem 1.5rem; /* Prevents form from bleeding off the screen */
     }
 }
+
+/* ========================================= */
+/* 📁 FILE FOLDER TABS                       */
+/* ========================================= */
+
+.tab-container {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem; /* Keeps the tabs close together */
+    margin-bottom: 2rem;
+    border-bottom: 4px solid var(--sage-main); /* The horizontal line the tabs sit on */
+}
+
+.tab-btn {
+    background-color: var(--sage-light);
+    color: var(--text-dark);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 500;
+    border-radius: 20px 20px 0 0; /* Rounds only the top corners */
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    bottom: -4px; /* Pulls the tab down so it perfectly connects with the bottom border */
+}
+
+/* The 'Lift' Animation */
+.tab-btn:hover {
+    transform: translateY(-5px);
+    background-color: var(--sage-main);
+    color: white;
+}
+
+/* The Active (Front) Tab */
+.tab-btn.active {
+    background-color: var(--sage-main);
+    color: white;
+}
+
+/* Hides the inactive tab content */
+.tab-content {
+    display: none; 
+}
+
+/* Shows the active tab content and restores your grid layout */
+.tab-content.active-tab {
+    display: grid; 
+}
